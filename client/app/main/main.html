@@ -1,0 +1,36 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+
+<div class="container">
+
+<ul class="list-inline">
+  <li>
+    <form class="form-inline" ng-submit="main.gen()">
+      <div class="form-group">
+        <input type="number" class="form-control" ng-model="main.numSites" min="0">
+        <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-refresh"></i> generate</button>
+      </div>
+    </form>
+  </li>
+  <li>
+    <form class="form-inline" ng-submit="main.add()">
+      <div class="form-group">
+        <input type="number" class="form-control" ng-model="main.addSites" min="1">
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> add</button>
+      </div>
+    </form>
+  </li>
+  <li>
+    <button class="btn btn-danger" ng-click="main.clear()"><i class="glyphicon glyphicon-trash"></i>  clear</button>
+  </li>
+</ul>
+
+
+
+
+
+
+<canvas id="voronoiCanvas" width="800" height="600" ng-click="main.recompute($event)" ng-mousemove="main.cellUnderMouse($event)"></canvas>
+
+</div>
